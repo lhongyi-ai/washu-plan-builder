@@ -10,26 +10,24 @@ export interface Resource {
   name: string;
   description: string;
   url?: string;
-  category?: string;
-}
-
-export interface WeeklyAction {
-  week: number;
-  tasks: string[];
+  type?: string;
+  why_matched?: string;
 }
 
 export interface PlanResponse {
+  answer: string;
   resources: Resource[];
-  weekly_plan: WeeklyAction[];
-  thirty_day_plan: string[];
-  email_template?: string;
 }
 
 export async function generatePlan(data: PlanRequest): Promise<PlanResponse> {
-  const res = await fetch(`${API_BASE_URL}/generate`, {
+  const res = await fetch(`${API_BASE_URL}/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+      question: data.goal,
+      major: data.major,
+      year: data.year,
+    }),
   });
 
   if (!res.ok) {
