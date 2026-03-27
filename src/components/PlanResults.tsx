@@ -1,23 +1,23 @@
 import { ExternalLink, BookOpen, MessageSquare } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { PlanResponse } from "@/lib/api";
+import type { ChatResponse } from "@/lib/api";
 
 interface PlanResultsProps {
-  data: PlanResponse;
+  data: ChatResponse;
 }
 
 const PlanResults = ({ data }: PlanResultsProps) => {
   return (
     <div className="space-y-10 animate-fade-in-up">
-      {/* AI Answer */}
+      {/* Answer */}
       <section className="space-y-4">
         <div className="flex items-center gap-2">
           <MessageSquare className="h-5 w-5 text-primary" />
-          <h2 className="text-2xl">Your Personalized Plan</h2>
+          <h2 className="text-2xl">Answer</h2>
         </div>
-        <Card className="bg-surface-warm">
+        <Card>
           <CardContent className="pt-5">
-            <div className="prose prose-sm max-w-none text-foreground whitespace-pre-wrap leading-relaxed">
+            <div className="whitespace-pre-wrap text-sm leading-relaxed text-foreground">
               {data.answer}
             </div>
           </CardContent>
@@ -25,11 +25,11 @@ const PlanResults = ({ data }: PlanResultsProps) => {
       </section>
 
       {/* Resources */}
-      {data.resources.length > 0 && (
+      {data.resources && data.resources.length > 0 && (
         <section className="space-y-4">
           <div className="flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
-            <h2 className="text-2xl">Recommended Resources</h2>
+            <h2 className="text-2xl">Resources</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {data.resources.map((r, i) => (

@@ -1,33 +1,29 @@
 export const API_BASE_URL = "https://washu-resource-ai-fc71.onrender.com";
 
-export interface PlanRequest {
-  goal: string;
-  major: string;
+export interface ChatRequest {
   year: string;
+  major: string;
+  question: string;
 }
 
 export interface Resource {
   name: string;
+  type?: string;
   description: string;
   url?: string;
-  type?: string;
   why_matched?: string;
 }
 
-export interface PlanResponse {
+export interface ChatResponse {
   answer: string;
   resources: Resource[];
 }
 
-export async function generatePlan(data: PlanRequest): Promise<PlanResponse> {
+export async function sendChat(data: ChatRequest): Promise<ChatResponse> {
   const res = await fetch(`${API_BASE_URL}/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      question: data.goal,
-      major: data.major,
-      year: data.year,
-    }),
+    body: JSON.stringify(data),
   });
 
   if (!res.ok) {
