@@ -17,8 +17,8 @@ const PlanResults = ({ data }: PlanResultsProps) => {
           <h2 className="text-2xl font-display font-bold">💡 Answer</h2>
         </div>
         <div className="rounded-2xl border bg-card p-6">
-          <div className="prose prose-sm max-w-none text-foreground prose-headings:text-xl prose-headings:font-display prose-headings:font-bold prose-headings:mt-6 prose-headings:mb-3 prose-p:my-3 prose-li:my-1.5 prose-ul:my-3 prose-ol:my-3 prose-strong:text-foreground">
-            <ReactMarkdown>{data.answer.replace(/\n/g, '\n\n')}</ReactMarkdown>
+          <div className="prose prose-sm max-w-none text-foreground prose-headings:text-xl prose-headings:font-display prose-headings:font-bold prose-headings:mt-8 prose-headings:mb-4 prose-p:my-4 prose-li:my-2 prose-ul:my-4 prose-ol:my-4 prose-strong:text-foreground [&_p+p]:mt-4">
+            <ReactMarkdown>{data.answer.replace(/\n(?=\*\*)/g, '\n\n').replace(/\n(?![\n*#-])/g, '\n\n')}</ReactMarkdown>
           </div>
         </div>
       </section>
