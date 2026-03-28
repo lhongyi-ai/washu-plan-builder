@@ -11,13 +11,13 @@ const PlanResults = ({ data }: PlanResultsProps) => {
   return (
     <div className="space-y-10 animate-fade-in-up">
       {/* Answer */}
-      <section className="space-y-3">
+      <section className="space-y-4">
         <div className="flex items-center gap-2">
-          <MessageSquare className="h-4 w-4 text-primary" />
-          <h2 className="text-xl font-sans font-bold">Answer</h2>
+          <MessageSquare className="h-5 w-5 text-primary" />
+          <h2 className="text-2xl font-display font-bold">💡 Answer</h2>
         </div>
-        <div className="rounded-2xl border bg-card p-5">
-          <div className="prose prose-sm max-w-none text-foreground">
+        <div className="rounded-2xl border bg-card p-6">
+          <div className="prose prose-sm max-w-none text-foreground prose-headings:text-xl prose-headings:font-display prose-headings:font-bold prose-headings:mt-6 prose-headings:mb-3 prose-p:my-3 prose-li:my-1.5 prose-ul:my-3 prose-ol:my-3 prose-strong:text-foreground">
             <ReactMarkdown>{data.answer}</ReactMarkdown>
           </div>
         </div>
@@ -25,10 +25,10 @@ const PlanResults = ({ data }: PlanResultsProps) => {
 
       {/* Resources */}
       {data.resources && data.resources.length > 0 && (
-        <section className="space-y-3">
+        <section className="space-y-4">
           <div className="flex items-center gap-2">
-            <BookOpen className="h-4 w-4 text-primary" />
-            <h2 className="text-xl font-sans font-bold">Resources</h2>
+            <BookOpen className="h-5 w-5 text-primary" />
+            <h2 className="text-2xl font-display font-bold">📚 Resources</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {data.resources.map((r, i) => (

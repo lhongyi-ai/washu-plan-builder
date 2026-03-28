@@ -12,7 +12,6 @@ const PlanPage = () => {
   const handleSubmit = async (data: ChatRequest) => {
     setIsLoading(true);
     setError(null);
-    setResult(null);
 
     try {
       const res = await sendChat(data);
@@ -37,7 +36,7 @@ const PlanPage = () => {
       </div>
 
       <div className="rounded-2xl border bg-card p-6 shadow-sm md:p-8 animate-fade-in-up">
-        <PlanForm onSubmit={handleSubmit} isLoading={isLoading} />
+        <PlanForm onSubmit={handleSubmit} isLoading={isLoading} hasResult={!!result} />
       </div>
 
       {error && (

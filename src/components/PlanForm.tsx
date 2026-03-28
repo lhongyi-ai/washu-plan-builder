@@ -8,9 +8,10 @@ import { MAJORS, YEARS, type ChatRequest } from "@/lib/api";
 interface PlanFormProps {
   onSubmit: (data: ChatRequest) => void;
   isLoading: boolean;
+  hasResult?: boolean;
 }
 
-const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
+const PlanForm = ({ onSubmit, isLoading, hasResult }: PlanFormProps) => {
   const [question, setQuestion] = useState("");
   const [major, setMajor] = useState("");
   const [year, setYear] = useState("");
@@ -81,7 +82,7 @@ const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
         ) : (
           <>
             <Send className="mr-2 h-4 w-4" />
-            Send
+            {hasResult ? "Ask Again" : "Send"}
           </>
         )}
       </Button>
