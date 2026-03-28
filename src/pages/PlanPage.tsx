@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Sparkles } from "lucide-react";
 import PlanForm from "@/components/PlanForm";
 import PlanResults from "@/components/PlanResults";
 import { sendChat, type ChatRequest, type ChatResponse } from "@/lib/api";
@@ -26,14 +26,17 @@ const PlanPage = () => {
 
   return (
     <div className="container max-w-2xl py-12 md:py-20">
-      <div className="mb-10 text-center">
-        <h1 className="text-3xl md:text-4xl">Ask WashU Engineering Resource AI</h1>
+      <div className="mb-10 text-center animate-fade-in">
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+          <Sparkles className="h-6 w-6 text-primary" />
+        </div>
+        <h1 className="text-3xl md:text-4xl">Ask the AI</h1>
         <p className="mt-3 text-muted-foreground">
-          For McKelvey undergrads: select your major and year, ask your goal question, and get actionable next steps.
+          Select your major and year, describe your goal, and get actionable next steps.
         </p>
       </div>
 
-      <div className="rounded-2xl border bg-card p-6 shadow-sm md:p-8">
+      <div className="rounded-2xl border bg-card p-6 shadow-sm md:p-8 animate-fade-in-up">
         <PlanForm onSubmit={handleSubmit} isLoading={isLoading} />
       </div>
 
@@ -41,17 +44,20 @@ const PlanPage = () => {
         <div className="mt-8 flex items-start gap-3 rounded-xl border border-destructive/20 bg-destructive/5 p-4 animate-fade-in">
           <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
           <div>
-            <p className="text-sm font-medium text-destructive">Request failed</p>
+            <p className="text-sm font-semibold text-destructive">Request failed</p>
             <p className="mt-1 text-sm text-muted-foreground">{error}</p>
           </div>
         </div>
       )}
 
       {isLoading && (
-        <div className="mt-12 flex flex-col items-center gap-4 animate-fade-in">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-primary/20 border-t-primary" />
+        <div className="mt-14 flex flex-col items-center gap-4 animate-fade-in">
+          <div className="relative h-10 w-10">
+            <div className="absolute inset-0 rounded-full border-2 border-primary/20" />
+            <div className="absolute inset-0 animate-spin rounded-full border-2 border-transparent border-t-primary" />
+          </div>
           <p className="text-sm text-muted-foreground animate-pulse-subtle">
-            Finding the best WashU resources for you...
+            Finding the best resources for you…
           </p>
         </div>
       )}

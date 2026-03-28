@@ -23,13 +23,13 @@ const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-foreground">Major</label>
+        <div className="space-y-1.5">
+          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Major</label>
           <Select value={major} onValueChange={setMajor}>
-            <SelectTrigger className="bg-background">
-              <SelectValue placeholder="Select your major" />
+            <SelectTrigger className="bg-background h-11">
+              <SelectValue placeholder="Select major" />
             </SelectTrigger>
             <SelectContent>
               {MAJORS.map((m) => (
@@ -39,11 +39,11 @@ const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
           </Select>
         </div>
 
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-foreground">Year</label>
+        <div className="space-y-1.5">
+          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Year</label>
           <Select value={year} onValueChange={setYear}>
-            <SelectTrigger className="bg-background">
-              <SelectValue placeholder="Select your year" />
+            <SelectTrigger className="bg-background h-11">
+              <SelectValue placeholder="Select year" />
             </SelectTrigger>
             <SelectContent>
               {YEARS.map((y) => (
@@ -54,15 +54,15 @@ const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
         </div>
       </div>
 
-      <div className="space-y-2">
-        <label className="text-sm font-medium text-foreground">
-          What's your question?
+      <div className="space-y-1.5">
+        <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Your Question
         </label>
         <Textarea
-          placeholder="e.g. I want to land a software engineering internship this summer, where should I start?"
+          placeholder="e.g. I want to land a software engineering internship this summer — where should I start?"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          className="min-h-[120px] resize-none bg-background text-base"
+          className="min-h-[130px] resize-none bg-background text-sm leading-relaxed"
           required
         />
       </div>
@@ -70,17 +70,17 @@ const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
       <Button
         type="submit"
         size="lg"
-        className="w-full text-base font-semibold"
+        className="w-full rounded-xl text-sm font-semibold h-12"
         disabled={isLoading || !question || !major || !year}
       >
         {isLoading ? (
           <>
-            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            Thinking...
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Thinking…
           </>
         ) : (
           <>
-            <Send className="mr-2 h-5 w-5" />
+            <Send className="mr-2 h-4 w-4" />
             Send
           </>
         )}
