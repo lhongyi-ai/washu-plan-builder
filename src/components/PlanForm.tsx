@@ -8,6 +8,7 @@ import { MAJORS, YEARS, type ChatRequest } from "@/lib/api";
 interface PlanFormProps {
   onSubmit: (data: ChatRequest) => void;
   isLoading: boolean;
+  hasResult?: boolean;
 }
 
 const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
