@@ -31,13 +31,13 @@ const Index = () => {
         </div>
         <div className="container relative flex flex-col items-center py-24 text-center md:py-36">
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary animate-fade-in">
-            For WashU Students
+            For WashU McKelvey Engineering Students
           </span>
           <h1 className="max-w-3xl text-4xl leading-tight md:text-6xl md:leading-[1.1] animate-fade-in-up">
-            Stop guessing.<br />Start building your path.
+            WashU Engineering Resource AI<br />for your next step.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-            Tell us your goal — we'll give you the resources, weekly actions, and a 30-day plan to make it happen.
+            Tell us your goal and get relevant McKelvey resources with clear actions you can take right now.
           </p>
           <Link to="/plan" className="mt-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <Button size="lg" className="text-base font-semibold px-8">

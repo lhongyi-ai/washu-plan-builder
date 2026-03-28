@@ -27,9 +27,9 @@ const PlanPage = () => {
   return (
     <div className="container max-w-2xl py-12 md:py-20">
       <div className="mb-10 text-center">
-        <h1 className="text-3xl md:text-4xl">Ask WashU Pathfinder</h1>
+        <h1 className="text-3xl md:text-4xl">Ask WashU Engineering Resource AI</h1>
         <p className="mt-3 text-muted-foreground">
-          Select your major & year, ask a question, and get personalized guidance.
+          For McKelvey undergrads: select your major and year, ask your goal question, and get actionable next steps.
         </p>
       </div>
 

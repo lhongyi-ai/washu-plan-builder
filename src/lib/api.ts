@@ -34,24 +34,18 @@ export async function sendChat(data: ChatRequest): Promise<ChatResponse> {
 }
 
 export const MAJORS = [
+  "Aerospace Engineering",
+  "Biomedical Engineering",
+  "Chemical Engineering",
+  "Civil Engineering",
+  "Computer Engineering",
   "Computer Science",
-  "Business",
-  "Biology",
-  "Economics",
-  "Psychology",
-  "Political Science",
-  "Mathematics",
-  "Engineering",
-  "Chemistry",
-  "English",
-  "Pre-Med",
-  "Finance",
   "Data Science",
-  "Neuroscience",
-  "Architecture",
-  "Art",
-  "Philosophy",
-  "Other",
+  "Electrical Engineering",
+  "Environmental Engineering",
+  "Mechanical Engineering",
+  "Systems Science & Engineering",
+  "Undeclared Engineering",
 ];
 
 export const YEARS = [
