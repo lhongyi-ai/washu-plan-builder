@@ -12,7 +12,6 @@ const PlanPage = () => {
   const handleSubmit = async (data: ChatRequest) => {
     setIsLoading(true);
     setError(null);
-    setResult(null);
 
     try {
       const res = await sendChat(data);
