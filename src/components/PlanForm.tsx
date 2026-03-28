@@ -11,7 +11,7 @@ interface PlanFormProps {
   hasResult?: boolean;
 }
 
-const PlanForm = ({ onSubmit, isLoading }: PlanFormProps) => {
+const PlanForm = ({ onSubmit, isLoading, hasResult }: PlanFormProps) => {
   const [question, setQuestion] = useState("");
   const [major, setMajor] = useState("");
   const [year, setYear] = useState("");
