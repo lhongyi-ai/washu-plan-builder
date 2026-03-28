@@ -1,4 +1,5 @@
 import { ExternalLink, BookOpen, MessageSquare } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { ChatResponse } from "@/lib/api";
 
@@ -16,8 +17,8 @@ const PlanResults = ({ data }: PlanResultsProps) => {
           <h2 className="text-xl font-sans font-bold">Answer</h2>
         </div>
         <div className="rounded-2xl border bg-card p-5">
-          <div className="whitespace-pre-wrap text-sm leading-relaxed text-foreground">
-            {data.answer}
+          <div className="prose prose-sm max-w-none text-foreground">
+            <ReactMarkdown>{data.answer}</ReactMarkdown>
           </div>
         </div>
       </section>
