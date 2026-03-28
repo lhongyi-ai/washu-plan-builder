@@ -18,7 +18,7 @@ const PlanResults = ({ data }: PlanResultsProps) => {
         </div>
         <div className="rounded-2xl border bg-card p-6">
           <div className="prose prose-sm max-w-none text-foreground prose-headings:text-xl prose-headings:font-display prose-headings:font-bold prose-headings:mt-6 prose-headings:mb-3 prose-p:my-3 prose-li:my-1.5 prose-ul:my-3 prose-ol:my-3 prose-strong:text-foreground">
-            <ReactMarkdown>{data.answer}</ReactMarkdown>
+            <ReactMarkdown>{data.answer.replace(/\n/g, '\n\n')}</ReactMarkdown>
           </div>
         </div>
       </section>
